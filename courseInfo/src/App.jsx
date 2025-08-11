@@ -35,7 +35,7 @@ const Course = ({ course }) => {
     <>
       <Header title={course.name} />
       <Content parts={course.parts} />
-      {/* <Total parts={course.parts} /> */}
+      <Total parts={course.parts} />
     </>
   )
 }
@@ -69,11 +69,11 @@ const Part = ({ name, exercises }) => {
   )
 }
 
-// const Total = ({ parts }) => {
-//   let sum = parts[0].exercises + parts[1].exercises + parts[2].exercises
-//   return (
-//     <>
-//       <p>Number of exercises {sum}</p>
-//     </>
-//   )
-// }
+const Total = ({ parts }) => {
+  let sum = parts[0].exercises + parts[1].exercises + parts[2].exercises
+  return (
+    <>
+      <strong>Number of exercises {sum}</strong>
+    </>
+  )
+}
