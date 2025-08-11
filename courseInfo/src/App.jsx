@@ -1,4 +1,5 @@
 const App = () => {
+
   const course = {
     id: 1,
     name: 'Half Stack application development',
@@ -40,7 +41,6 @@ const Course = ({ course }) => {
   )
 }
 
-
 const Header = ({ title }) => {
   return (
     <>
@@ -48,8 +48,8 @@ const Header = ({ title }) => {
     </>
   )
 }
-const Content = ({ parts }) => {
 
+const Content = ({ parts }) => {
   return (
     <>
       {parts.map((part) => {
@@ -70,10 +70,14 @@ const Part = ({ name, exercises }) => {
 }
 
 const Total = ({ parts }) => {
-  let sum = parts[0].exercises + parts[1].exercises + parts[2].exercises
+
+  const total = parts.reduce((acc, cv) => {
+    return acc + cv.exercises
+  }, 0)
+
   return (
     <>
-      <strong>Number of exercises {sum}</strong>
+      <strong>Number of exercises {total}</strong>
     </>
   )
 }
